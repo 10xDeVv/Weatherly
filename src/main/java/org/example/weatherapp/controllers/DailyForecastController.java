@@ -1,0 +1,27 @@
+package org.example.weatherapp.controllers;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+public class DailyForecastController {
+    @FXML
+    public Label temperatureSummaryLabel;
+
+    @FXML
+    public ImageView weatherStatusImage;
+
+    @FXML
+    public Label weatherStatusLabel;
+
+    @FXML
+    public Label currentDate;
+
+    public void setInfo(String temperatureSummary, String weatherStatus, String currentDate, String imageName) {
+        this.temperatureSummaryLabel.setText(temperatureSummary);
+        this.weatherStatusLabel.setText(weatherStatus);
+        this.currentDate.setText(currentDate);
+        weatherStatusImage.setImage(new Image(getClass().getResource("/org/example/weatherapp/icons/" + imageName).toExternalForm()));
+    }
+}

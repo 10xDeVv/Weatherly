@@ -1,0 +1,57 @@
+.root{
+    -fx-background-color: #0E151E;
+    -fx-font-family: "HelveticaNeueLT Std";
+    -global-font-color: blue;
+    -fx-text-fill: white;
+}
+
+.navBar *{
+    -fx-text-fill: white;
+}
+
+.searchTextField{
+    -fx-background-color: #19222D;
+    -fx-font-size: 1.5em;
+}
+
+.cityNameLabel{
+    -fx-font-size: 2em;
+    -fx-text-fill: white;
+    -fx-font-family: "HelveticaNeueLT Std";
+    -fx-font-weight: bold;
+}
+
+.temperatureLabel{
+    -fx-font-size: 1em;
+    -fx-text-fill: #b4b4b4;
+}
+
+.weatherConditionLabel{
+    -fx-font-size: 3em;
+    -fx-text-fill: white;
+}
+
+.todayForecastContainer {
+    -fx-background-color: #202B3D;
+    -fx-background-radius: 20;
+}
+
+.todayForecastLabel{
+    -fx-font-size: 1.5em;
+    -fx-text-fill: #ffffff;
+}
+
+.additionalInfoContainer{
+    -fx-background-color: #202B3D;
+    -fx-background-radius: 20;
+}
+
+.sevenDayForecastContainer{
+    -fx-background-color: #202B3D;
+    -fx-background-radius: 20;
+}
+
+.sevenDayForecastLabel{
+    -fx-font-size: 1.5em;
+    -fx-text-fill: white;
+}
