@@ -1,0 +1,17 @@
+.root *{
+    -fx-font-family: "HelveticaNeueLT Std";
+    -fx-font-size: 1.3em;
+    -fx-text-fill: white;
+}
+
+.currentDay{
+
+}
+
+.weatherStatusLabel{
+    -fx-font-weight: bold;
+}
+
+.temperatureSummaryLabel{
+
+}

@@ -16,12 +16,12 @@ public class DailyForecastController {
     public Label weatherStatusLabel;
 
     @FXML
-    public Label currentDate;
+    public Label currentDay;
 
     public void setInfo(String temperatureSummary, String weatherStatus, String currentDate, String imageName) {
         this.temperatureSummaryLabel.setText(temperatureSummary);
         this.weatherStatusLabel.setText(weatherStatus);
-        this.currentDate.setText(currentDate);
-        weatherStatusImage.setImage(new Image(getClass().getResource("/org/example/weatherapp/icons/" + imageName).toExternalForm()));
+        this.currentDay.setText(currentDate);
+        weatherStatusImage.setImage(new Image(getClass().getResource("/org/example/weatherapp/icons/small/" + imageName).toExternalForm()));
     }
 }

@@ -3,6 +3,8 @@ module org.example.weatherapp {
     requires javafx.fxml;
     requires java.net.http;
     requires javafx.graphics;
+    requires com.fasterxml.jackson.databind;
+    requires static lombok;
 
 
     opens org.example.weatherapp to javafx.fxml;

@@ -15,20 +15,25 @@
 }
 
 .cityNameLabel{
-    -fx-font-size: 2em;
+    -fx-font-size: 5em;
     -fx-text-fill: white;
-    -fx-font-family: "HelveticaNeueLT Std";
-    -fx-font-weight: bold;
+    -fx-font-family:  "Poppins Black";
+    transition: -fx-text-fill 0.5s ease-in-out;
 }
 
-.temperatureLabel{
-    -fx-font-size: 1em;
-    -fx-text-fill: #b4b4b4;
+.cityNameLabel:hover{
+    -fx-text-fill: #007AFF;
 }
 
-.weatherConditionLabel{
-    -fx-font-size: 3em;
+.localTimeLabel{
+    -fx-font-size: 1.3em;
+    -fx-text-fill: rgba(255, 255, 255, 0.5);
+}
+
+.temperature{
+    -fx-font-size: 4em;
     -fx-text-fill: white;
+    -fx-font-family: "Poppins SemiBold";
 }
 
 .todayForecastContainer {
@@ -55,3 +60,40 @@
     -fx-font-size: 1.5em;
     -fx-text-fill: white;
 }
+
+.feelsLikeContainer * {
+    -fx-text-fill: white;
+    -fx-font-size: 1.5em;
+}
+
+.airConditionsInnerContainer *{
+    -fx-font-size: 2em;
+    -fx-text-fill: #F0F8FA;
+}
+
+.airConditionsValuesContainer {
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.airConditionsLabel{
+    -fx-font-size: 1.5em;
+    -fx-text-fill: #F0F8FA;
+    -fx-font-family: Roboto;
+}
+
+.dewPointLabel {
+    -fx-font-size: 2em;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.appTitleLabel {
+    -fx-font-size: 3.2em;
+    -fx-font-family: "HelveticaNeueLT Std ExtBlk Cn";
+    -fx-text-fill: #ffc400;
+}
+
+/*add interactivity animations for some feedback*/
+/*for instance if the user hovers over a card it should translate a littl bit and also have a drop shaddow*/
+/*just to make things more interactive*/

@@ -17,7 +17,7 @@ public class HourlyForecastController {
 
     public void setInfo(String time, String imageName, String temperature) {
         hourlyModalTime.setText(time);
-        hourlyModalImage.setImage(new javafx.scene.image.Image(getClass().getResource("/org/example/weatherapp/icons/" + imageName).toExternalForm()));
-        hourlyModalTemperature.setText(temperature);
+        hourlyModalImage.setImage(new javafx.scene.image.Image(getClass().getResource("/org/example/weatherapp/icons/medium/" + imageName).toExternalForm()));
+        hourlyModalTemperature.setText(temperature + "°");
     }
 }

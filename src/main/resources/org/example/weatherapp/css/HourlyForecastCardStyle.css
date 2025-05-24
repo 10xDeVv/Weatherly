@@ -5,6 +5,17 @@
     -fx-font-size: 1.6em;
 }
 
+.root{
+    transition: all 0.3s ease-in-out;
+}
+
+.root:hover {
+    -fx-effect: dropshadow(gaussian, rgb(44, 50, 65), 10, 0.5, 4, 4);
+    -fx-background-color: rgba(23, 32, 44, 0.49);
+    -fx-translate-x: 1;
+    -fx-translate-y: -4;
+}
+
 .hourlyModalTemperature {
     -fx-text-fill: white;
     -fx-font-size: 1.8em;

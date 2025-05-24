@@ -4,13 +4,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox alignment="CENTER" prefHeight="67.0" prefWidth="298.0" style="-fx-background-color: turquoise;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.weatherapp.controllers.DailyForecastController">
-
-   <Label fx:id="currentDate" prefHeight="31.0" prefWidth="46.0" text="Label" />
-   <Label fx:id="weatherStatusLabel" prefWidth="223.0" text="Label">
+<HBox alignment="CENTER" prefHeight="92.0" prefWidth="375.0" spacing="80.0" styleClass="root" stylesheets="@../css/DailyForecastCard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.weatherapp.controllers.DailyForecastController">
+   <Label fx:id="currentDay" prefHeight="31.0" prefWidth="46.0" styleClass="currentDay" text="Label" HBox.hgrow="ALWAYS" />
+   <Label fx:id="weatherStatusLabel" graphicTextGap="10.0" prefHeight="39.0" prefWidth="112.0" styleClass="weatherStatusLabel" text="Label" HBox.hgrow="ALWAYS">
       <graphic>
          <ImageView fx:id="weatherStatusImage" fitHeight="39.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
       </graphic>
    </Label>
-   <Label fx:id="temperatureSummaryLabel" text="Label" />
+   <Label fx:id="temperatureSummaryLabel" styleClass="tempperatureSummaryLabel" text="37/21" HBox.hgrow="ALWAYS" />
 </HBox>
