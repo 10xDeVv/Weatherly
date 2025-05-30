@@ -5,7 +5,7 @@ module org.example.weatherapp {
     requires javafx.graphics;
     requires com.fasterxml.jackson.databind;
     requires static lombok;
-
+    requires java.desktop;
 
     opens org.example.weatherapp to javafx.fxml;
     exports org.example.weatherapp;

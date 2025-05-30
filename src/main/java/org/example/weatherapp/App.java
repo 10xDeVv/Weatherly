@@ -4,9 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import org.example.weatherapp.service.ApiService;
 
 import java.io.IOException;
@@ -27,8 +25,6 @@ public class App extends Application {
     public static void main(String[] args) throws IOException, InterruptedException {
         ApiService service = new ApiService();
         System.setProperty("prism.lcdtext", "false");
-       // String body = service.getWeather("SanFrancisco");
-       // System.out.println(body);
         launch();
     }
 }
