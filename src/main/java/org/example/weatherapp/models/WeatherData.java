@@ -11,16 +11,17 @@ import java.util.List;
 @Builder
 public class WeatherData {
     private String city;
+    private String country;
     private String localTime;
-    private Double currentTemperature;
+    private double currentTemperature;
     private Boolean isDay;
     private String weatherCondition;
     private String visibility;
-    private Double windSpeed;
-    private Double pressure;
-    private Double feelsLike;
-    private Double dewPoint;
-    private Double uv;
+    private double windSpeed;
+    private double pressure;
+    private double feelsLike;
+    private double dewPoint;
+    private double uv;
     private String sunriseTime;
     private String sunsetTime;
     private String moonriseTime;

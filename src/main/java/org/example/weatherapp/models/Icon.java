@@ -9,9 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class HourlyForecast {
-    private String time;
-    private double temp;
-    private String condition;
-    private boolean isDay;
+public class Icon {
+    private String label;
+    private String iconPath;
 }
