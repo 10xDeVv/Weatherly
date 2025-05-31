@@ -13,5 +13,6 @@ public class DailyForecast {
     private String condition;
     private Double maxTemp;
     private Double minTemp;
+    private boolean isDay;
     private String date;
 }

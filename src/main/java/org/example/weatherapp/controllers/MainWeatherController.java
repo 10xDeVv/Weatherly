@@ -1,5 +1,6 @@
 package org.example.weatherapp.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -13,7 +14,6 @@ import org.example.weatherapp.models.*;
 import org.example.weatherapp.service.ApiService;
 import org.example.weatherapp.utility.DateFormatter;
 import org.example.weatherapp.utility.IconUtility;
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 @Setter
 public class MainWeatherController implements Initializable {
     @FXML public ImageView weatherIcon;
-    @FXML private Label temperature, cityNameLabel, localTimeLabel;
+    @FXML private Label temperature, cityNameLabel, countryLabel, localTimeLabel;
     @FXML private Label feelsLikeLabel, windLabel, visibilityLabel, uvIndexLabel, dewPointLabel, pressureLabel;
     @FXML private Label sunriseLabel, sunsetLabel, moonriseLabel, moonsetLabel;
     @FXML private TextField searchTextField;
@@ -62,8 +62,16 @@ public class MainWeatherController implements Initializable {
     }
 
     @FXML
-    private void displayWeather(WeatherData weatherData) throws IOException {
+    public void displayWeather(ActionEvent event) throws Exception {
+        String input = searchTextField.getText();
+        WeatherData data = service.getWeather(input);
+        displayWeather(data);
+    }
+
+    @FXML
+    private void displayWeather(WeatherData weatherData){
         cityNameLabel.setText(weatherData.getCity());
+        countryLabel.setText(weatherData.getCountry());
         localTimeLabel.setText(weatherData.getLocalTime());
         feelsLikeLabel.setText(weatherData.getFeelsLike() + "°C");
         temperature.setText(weatherData.getCurrentTemperature() + "°");
@@ -78,7 +86,7 @@ public class MainWeatherController implements Initializable {
         moonriseLabel.setText(weatherData.getMoonriseTime());
         moonsetLabel.setText(weatherData.getMoonsetTime());
         Icon ico = IconUtility.getIcon(weatherData.getWeatherCondition(), weatherData.getIsDay());
-        weatherIcon.setImage(new Image(getClass().getResource("/org/example/weatherapp/icons/big/" + ico.getIcon()).toExternalForm()));
+        weatherIcon.setImage(new Image(getClass().getResource("/org/example/weatherapp/icons/big/" + ico.getIconPath()).toExternalForm()));
 
 
         List<HourlyForecast> hourlyForecasts = weatherData.getHourlyForecasts();
@@ -89,8 +97,8 @@ public class MainWeatherController implements Initializable {
 
         for (int i = 0; i < hourlyControllers.size(); i++) {
             HourlyForecast data = hourlyForecasts.get(i);
-            Icon ico1 = IconUtility.getIcon(data.getCondition(), weatherData.getIsDay());
-            hourlyControllers.get(i).setInfo(data.getTime(), ico1.getIcon(), String.format("%.0f", data.getTemp()));
+            Icon ico1 = IconUtility.getIcon(data.getCondition(), data.isDay());
+            hourlyControllers.get(i).setInfo(data.getTime(), ico1.getIconPath(), String.format("%.0f", data.getTemp()));
         }
 
         List<DailyForecast> dailyForecasts = weatherData.getDailyForecasts();
@@ -102,8 +110,8 @@ public class MainWeatherController implements Initializable {
 
         for (int i = 0; i < dailyControllers.size(); i++) {
             DailyForecast data = dailyForecasts.get(i);
-            Icon ico2 = IconUtility.getIcon(data.getCondition(), weatherData.getIsDay());
-            dailyControllers.get(i).setInfo(String.format("%.0f/%.0f", data.getMaxTemp(), data.getMinTemp()), ico2.getLabel(), dailyDates.get(i), ico2.getIcon());
+            Icon ico2 = IconUtility.getIcon(data.getCondition(), data.isDay());
+            dailyControllers.get(i).setInfo(String.format("%.0f°/%.0f°", data.getMaxTemp(), data.getMinTemp()), ico2.getLabel(), dailyDates.get(i), ico2.getIconPath());
         }
     }
 }

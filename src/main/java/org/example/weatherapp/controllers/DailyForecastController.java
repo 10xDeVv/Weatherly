@@ -24,15 +24,6 @@ public class DailyForecastController {
         this.temperatureSummaryLabel.setText(temperatureSummary);
         this.weatherStatusLabel.setText(weatherStatus);
         this.currentDay.setText(currentDate);
-        String fullPath = "/org/example/weatherapp/icons/big/" + imageName;
-        URL imageUrl = getClass().getResource(fullPath);
-
-        if (imageUrl == null) {
-            System.err.println("❌ Image not found at: " + fullPath);
-        } else {
-            System.out.println("✅ Image found: " + imageUrl.toExternalForm());
-
-        }
         weatherStatusImage.setImage(new Image(getClass().getResource("/org/example/weatherapp/icons/small/" + imageName).toExternalForm()));
     }
 }

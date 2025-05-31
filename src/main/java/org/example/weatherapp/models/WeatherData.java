@@ -11,6 +11,7 @@ import java.util.List;
 @Builder
 public class WeatherData {
     private String city;
+    private String country;
     private String localTime;
     private double currentTemperature;
     private Boolean isDay;

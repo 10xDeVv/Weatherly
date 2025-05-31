@@ -13,4 +13,5 @@ public class HourlyForecast {
     private String time;
     private double temp;
     private String condition;
+    private boolean isDay;
 }

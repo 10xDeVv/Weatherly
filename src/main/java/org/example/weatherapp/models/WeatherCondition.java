@@ -40,8 +40,6 @@ public enum WeatherCondition {
         this.icon = icon;
     }
 
-    //you need to fix the issue of night and day
-
     public static WeatherCondition getIconFromCondition(String apiCondition,  Boolean isDay) {
         String condition = apiCondition.toLowerCase();
 
@@ -66,23 +64,25 @@ public enum WeatherCondition {
         if (condition.contains("mist")) return MIST;
         if (condition.contains("haze")) return HAZE;
 
+        if (condition.contains("overcast")) return OVERCAST;
+
         if (condition.contains("partly cloudy")) {
-            return !isDay ? PARTLY_CLOUDY_NIGHT : PARTLY_CLOUDY_DAYTIME;
+            return isDay ? PARTLY_CLOUDY_DAYTIME : PARTLY_CLOUDY_NIGHT ;
         }
 
         if (condition.contains("cloudy")) {
-            return !isDay ? MOON_CLOUDY : SUN_CLOUDY;
+            return isDay ? SUN_CLOUDY : MOON_CLOUDY;
         }
 
         if (condition.contains("clear") || condition.contains("sunny")) {
-            return !isDay ? MOON : SUNNY;
+            return isDay ? SUNNY : MOON;
         }
 
-        if (condition.contains("moon")) return FULL_MOON; // optional
+        if (condition.contains("moon")) return FULL_MOON;
 
         if (condition.contains("wind")) return WINDY;
         if (condition.contains("wet")) return WET;
 
-        return !isDay ? MOON : SUNNY; // default fallback
+        return isDay ? SUNNY : MOON;
     }
 }

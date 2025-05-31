@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.weatherapp.models.DailyForecast;
 import org.example.weatherapp.models.HourlyForecast;
 import org.example.weatherapp.models.WeatherData;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +20,7 @@ public class WeatherParser {
 
         String name = location.get("name").asText();
         String localtime = location.get("localtime").asText();
+        String country = location.get("country").asText();
 
         double temp = current.get("temp_c").asDouble();
         boolean isDay = current.get("is_day").asInt() == 1;
@@ -49,12 +49,12 @@ public class WeatherParser {
             hourlyForecasts.add(new HourlyForecast(
                     DateFormatter.formatTo12HourTime(h.path("time").asText()),
                     h.path("temp_c").asDouble(),
-                    h.path("condition").path("text").asText()
+                    h.path("condition").path("text").asText(),
+                    h.path("is_day").asInt() == 1
             ));
         }
 
         List<DailyForecast> dailyForecasts = new ArrayList<>();
-        System.out.println(dailyForecastArray.size());
         for (int i = 0; i < dailyForecastArray.size(); i++) {
             JsonNode day = dailyForecastArray.get(i).get("day");
             Double maxTemp = day.get("maxtemp_c").asDouble();
@@ -62,12 +62,13 @@ public class WeatherParser {
             String conditionText = day.get("condition").get("text").asText();
             String date = dailyForecastArray.get(i).get("date").asText();
 
-            DailyForecast dailyForecast = new DailyForecast(conditionText, maxTemp, minTemp,date);
+            DailyForecast dailyForecast = new DailyForecast(conditionText, maxTemp, minTemp, true ,date);
             dailyForecasts.add(dailyForecast);
         }
 
         return WeatherData.builder()
                 .city(name)
+                .country(country)
                 .localTime(DateFormatter.formatToDayAndTime(localtime))
                 .currentTemperature(temp)
                 .isDay(isDay)

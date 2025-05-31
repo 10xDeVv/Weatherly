@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<VBox alignment="TOP_CENTER" prefHeight="650.0" prefWidth="1000.0" spacing="5.0" styleClass="root" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.weatherapp.controllers.MainWeatherController">
+<VBox alignment="TOP_CENTER" prefHeight="650.0" prefWidth="1000.0" spacing="5.0" styleClass="root" stylesheets="@../css/MainWeatherView.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.weatherapp.controllers.MainWeatherController">
     <!-- Navigation Bar -->
     <HBox fx:id="navBar" alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="1000.0" spacing="40.0" styleClass="navBar" VBox.vgrow="NEVER">
         <Label fx:id="appTitleLabel" prefHeight="35.0" prefWidth="226.0" styleClass="appTitleLabel" text="WeatherApp" underline="true" HBox.hgrow="NEVER" />
@@ -23,6 +24,15 @@
                 <Image url="@../icons/search-interface-symbol.png" />
             </ImageView>
         </StackPane>
+      <Button mnemonicParsing="false" onAction="#displayWeather" styleClass="searchButton">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/search.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
       <VBox.margin>
          <Insets bottom="10.0" top="10.0" />
       </VBox.margin>
@@ -39,11 +49,16 @@
                 <VBox fx:id="currentWeatherDetails" prefHeight="210.0" prefWidth="447.0" spacing="15.0">
                     <VBox>
                         <Label fx:id="cityNameLabel" prefHeight="86.0" prefWidth="482.0" styleClass="cityNameLabel" text="London" />
-                        <Label fx:id="localTimeLabel" prefHeight="20.0" prefWidth="162.0" styleClass="localTimeLabel" text="Local Time: " translateY="-5.0" />
+                  <HBox prefHeight="12.0" prefWidth="447.0">
+                     <children>
+                              <Label fx:id="localTimeLabel" prefHeight="22.0" prefWidth="103.0" styleClass="localTimeLabel" text="Local Time: " />
+                        <Label fx:id="countryLabel" layoutX="10.0" layoutY="10.0" prefHeight="22.0" prefWidth="152.0" styleClass="localTimeLabel" text="countryText" />
+                     </children>
+                  </HBox>
                     </VBox>
                     <Label fx:id="temperature" prefHeight="68.0" prefWidth="157.0" styleClass="temperature" text="31°" />
                 </VBox>
-                <ImageView fx:id="weatherIcon" fitHeight="210.0" fitWidth="213.0" pickOnBounds="true" preserveRatio="true" translateX="250.0">
+                <ImageView fx:id="weatherIcon" fitHeight="210.0" fitWidth="213.0" pickOnBounds="true" preserveRatio="true" styleClass="weatherIcon" translateX="250.0">
                     <Image url="@../icons/big/sunny.png" />
                 </ImageView>
             <padding>
@@ -76,13 +91,13 @@
             <HBox fx:id="additionalInfoContainer" prefHeight="200.0" prefWidth="720.0" spacing="20.0" VBox.vgrow="ALWAYS">
                 <VBox fx:id="airConditionsContainer" prefHeight="194.0" prefWidth="393.0" spacing="10.0" styleClass="additionalInfoContainer">
                     <Label fx:id="airConditionsLabel" prefHeight="44.0" prefWidth="286.0" styleClass="airConditionsLabel" text="AIR CONDITIONS" />
-                    <HBox fx:id="airConditionsInnerContainer" maxWidth="658.0" prefHeight="124.0" prefWidth="658.0" styleClass="airConditionsInnerContainer">
+                    <HBox fx:id="airConditionsInnerContainer" maxWidth="658.0" prefHeight="124.0" prefWidth="658.0" styleClass="airConditionsInnerContainer" translateY="-5.0">
                         <VBox fx:id="airConditionsLabelContainer" prefHeight="139.0" prefWidth="298.0" styleClass="airConditionsLabelContainer" HBox.hgrow="ALWAYS">
                             <Label graphicTextGap="15.0" prefHeight="23.0" prefWidth="154.0" text="Feels Like">
                                 <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../icons/temperature.png" />
+                                            <Image url="@../icons/airconditions/temperature.png" />
                                         </image>
                                     </ImageView>
                                 </graphic>
@@ -90,7 +105,7 @@
                             <Label graphicTextGap="15.0" prefHeight="23.0" prefWidth="155.0" text="Wind">
                                 <graphic>
                                     <ImageView fitHeight="34.0" fitWidth="30.0" preserveRatio="true">
-                                        <Image url="@../icons/wind.png" />
+                                        <Image url="@../icons/airconditions/wind.png" />
                                     </ImageView>
                                 </graphic>
                             </Label>
@@ -98,7 +113,7 @@
                                 <graphic>
                                     <ImageView fitHeight="34.0" fitWidth="30.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../icons/low-visibility.png" />
+                                            <Image url="@../icons/airconditions/low-visibility.png" />
                                         </image>
                                     </ImageView>
                                 </graphic>
@@ -107,7 +122,7 @@
                                 <graphic>
                                     <ImageView fitHeight="34.0" fitWidth="30.0" preserveRatio="true">
                                         <image>
-                                            <Image url="@../icons/uv-index.png" />
+                                            <Image url="@../icons/airconditions/uv-index.png" />
                                         </image>
                                     </ImageView>
                                 </graphic>
@@ -142,7 +157,7 @@
                         <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="53.0" spacing="10.0">
                             <ImageView fitHeight="31.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@../icons/sunset.png" />
+                                    <Image url="@../icons/airconditions/sunset.png" />
                                 </image>
                             </ImageView>
                             <Label prefHeight="27.0" prefWidth="197.0" styleClass="todayForecastLabel" text="RISE" />
