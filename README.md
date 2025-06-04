@@ -2,6 +2,8 @@
 
 **WeatherApp** is a real-time Java-based weather dashboard built with **JavaFX**, utilizing the **Java HTTP Client** for real-time weather data retrieval from external APIs and **Jackson** for JSON parsing. Designed with an intuitive UI and clean MVC architecture, the app displays current, hourly, and daily forecasts with real-time updates.
 
+> **Corresponding video:** https://youtu.be/jkdAjw-tcz4?si=_H7eRAY5ugX8kPUH
+
 <img src="src/main/resources/org/example/weatherapp/screenshots/img.png">
 
 ---
@@ -54,18 +56,19 @@ This project uses **Maven** for build automation and dependency management.
 
 ---
 
-### 📦 Build and Run:
+##  🚀 Getting Started
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/weatherapp.git
-cd weatherapp
+git clone https://github.com/10xDeVv/Weatherly.git
 
 # Build the project
 mvn clean install
 
 # Run the JavaFX app
 mvn javafx:run
+
+📂 Folder Structure
 
 org.example.weatherapp/
 ├── App.java                          # JavaFX application entry point
@@ -101,59 +104,22 @@ weatherly/
 ├── screenshots/                     # App screenshots (optional)
 └── README.md
 
-📘 Notable Model: WeatherData
-The WeatherData class aggregates all weather-related information, including:
+```
 
-📍 Location: City, country, local time
+## 🔐 API Configuration
 
-☀️ Current Conditions: Temperature, pressure, wind speed, visibility
-
-🌅 Astronomy: Sunrise, sunset, moonrise, moonset
-
-📊 Forecasts: Hourly and daily weather breakdowns
-
-🔐 API Configuration
-To use this app, configure your weather API key (e.g., from OpenWeather or WeatherAPI) in the appropriate service class. Make sure to keep API credentials secure.
-
-🧑‍💻 Development Environment
-Java SDK 23+
-
-Maven 3.8+
-
-IDE with JavaFX support (e.g., IntelliJ IDEA, Eclipse)
-
-weatherly/
-├── App.java # JavaFX application launcher
-├── client/
-│ └── WeatherApiClient.java # Handles API calls via HTTPClient
-├── service/
-│ └── ApiService.java # Connects client and parser
-├── utility/
-│ ├── WeatherParser.java # Parses JSON responses
-│ ├── DateFormatter.java # Handles date & time formatting
-│ └── IconUtility.java # Selects appropriate weather icons
-├── models/ # Java POJOs for weather data
-├── controllers/
-│ ├── MainWeatherController.java
-│ ├── DailyForecastController.java
-│ └── HourlyForecastController.java
-├── fxml/
-│ └── MainWeatherView.fxml # Main UI layout
-├── icons/ # Weather icons (big, medium, small)
-├── screenshots/ # App screenshots (optional)
-└── README.md
-
----
-
-## ⚙️ Setup Instructions
+To use this app, you'll need a free API key.
 
 ### 1. 🔑 Get Your API Key
-Sign up and subscribe to [WeatherAPI on RapidAPI](https://rapidapi.com/weatherapi/api/weatherapi-com/) to get your `X-RapidAPI-Key`.
-
----
+Sign up at [WeatherAPI on RapidAPI](https://rapidapi.com/weatherapi/api/weatherapi-com/) and copy your `X-RapidAPI-Key`.
 
 ### 2. 💻 Set Environment Variable
 
-**Windows (CMD):**
-```cmd
-set API_KEY=your_rapidapi_key_here
+**Windows (CMD):**  
+`set API_KEY=your_rapidapi_key_here`
+
+**macOS/Linux (bash/zsh):**  
+`export API_KEY=your_rapidapi_key_here`
+
+Then run the app as usual with:  
+`mvn javafx:run`
