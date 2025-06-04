@@ -51,7 +51,7 @@
                         <Label fx:id="cityNameLabel" prefHeight="86.0" prefWidth="482.0" styleClass="cityNameLabel" text="London" />
                   <HBox prefHeight="12.0" prefWidth="447.0">
                      <children>
-                              <Label fx:id="localTimeLabel" prefHeight="22.0" prefWidth="103.0" styleClass="localTimeLabel" text="Local Time: " />
+                              <Label fx:id="localTimeLabel" prefHeight="22.0" prefWidth="119.0" styleClass="localTimeLabel" text="Local Time: " />
                         <Label fx:id="countryLabel" layoutX="10.0" layoutY="10.0" prefHeight="22.0" prefWidth="152.0" styleClass="localTimeLabel" text="countryText" />
                      </children>
                   </HBox>
