@@ -1,0 +1,118 @@
+.root{
+    -fx-background-color: #0E151E;
+    -fx-font-family: "HelveticaNeueLT Std";
+    -global-font-color: blue;
+    -fx-text-fill: white;
+}
+
+.navBar *{
+    -fx-text-fill: white;
+}
+
+.searchTextField{
+    -fx-background-color: #19222D;
+    -fx-font-size: 1.5em;
+}
+
+.searchTextField:focused {
+    -fx-border-color: blue;
+    -fx-border-width: 2px;
+}
+
+.searchButton {
+    -fx-background-color: #19222D;
+    transition: all 0.3s ease-in-out;
+}
+
+.weatherIcon {
+    transition: all 4s ease-in-out;
+}
+
+.weatherIcon:hover {
+    -fx-translate-x: -3px;
+}
+
+.searchButton:hover {
+    -fx-background-color: #061462;
+    -fx-translate-y: -1px;
+}
+
+.cityNameLabel{
+    -fx-font-size: 5em;
+    -fx-text-fill: white;
+    -fx-font-family:  "Poppins Black";
+    transition: -fx-text-fill 0.5s ease-in-out;
+}
+
+.cityNameLabel:hover{
+    -fx-text-fill: #007AFF;
+}
+
+.localTimeLabel{
+    -fx-font-size: 1.3em;
+    -fx-text-fill: rgba(255, 255, 255, 0.5);
+}
+
+.temperature{
+    -fx-font-size: 4em;
+    -fx-text-fill: white;
+    -fx-font-family: "Poppins SemiBold";
+}
+
+.todayForecastContainer {
+    -fx-background-color: #202B3D;
+    -fx-background-radius: 20;
+}
+
+.todayForecastLabel{
+    -fx-font-size: 1.5em;
+    -fx-text-fill: #ffffff;
+}
+
+.additionalInfoContainer{
+    -fx-background-color: #202B3D;
+    -fx-background-radius: 20;
+}
+
+.sevenDayForecastContainer{
+    -fx-background-color: #202B3D;
+    -fx-background-radius: 20;
+}
+
+.sevenDayForecastLabel{
+    -fx-font-size: 1.5em;
+    -fx-text-fill: white;
+}
+
+.feelsLikeContainer * {
+    -fx-text-fill: white;
+    -fx-font-size: 1.5em;
+}
+
+.airConditionsInnerContainer *{
+    -fx-font-size: 2em;
+    -fx-text-fill: #F0F8FA;
+}
+
+.airConditionsValuesContainer {
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.airConditionsLabel{
+    -fx-font-size: 1.5em;
+    -fx-text-fill: #F0F8FA;
+    -fx-font-family: Roboto;
+}
+
+.dewPointLabel {
+    -fx-font-size: 2em;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.appTitleLabel {
+    -fx-font-size: 3.2em;
+    -fx-font-family: "HelveticaNeueLT Std ExtBlk Cn";
+    -fx-text-fill: #ffc400;
+}

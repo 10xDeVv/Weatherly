@@ -1,0 +1,19 @@
+.root *{
+    -fx-font-family: "HelveticaNeueLT Std";
+    -fx-font-size: 1.7em;
+    -fx-text-fill: white;
+}
+
+.root{
+    transition: all 0.2s ease-in-out;
+}
+
+.root:hover{
+    -fx-background-radius: 0;
+    -fx-translate-y: -4px;
+    -fx-background-color: #111a25;
+}
+
+.weatherStatusLabel{
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" prefHeight="92.0" prefWidth="375.0" spacing="15.0" styleClass="root" stylesheets="@../css/DailyForecastCard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.weatherapp.controllers.DailyForecastController">
+   <Label fx:id="currentDay" prefHeight="31.0" prefWidth="156.0" styleClass="currentDay" text="Label" translateX="40.0" HBox.hgrow="ALWAYS" />
+   <Label fx:id="weatherStatusLabel" graphicTextGap="10.0" prefHeight="39.0" prefWidth="260.0" styleClass="weatherStatusLabel" text="Label" textOverrun="CLIP" translateX="20.0" HBox.hgrow="ALWAYS">
+      <graphic>
+         <ImageView fx:id="weatherStatusImage" fitHeight="39.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+      </graphic>
+   </Label>
+   <Label fx:id="temperatureSummaryLabel" prefHeight="31.0" prefWidth="186.0" styleClass="tempperatureSummaryLabel" text="37/21" HBox.hgrow="ALWAYS" />
+</HBox>
