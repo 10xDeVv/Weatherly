@@ -63,10 +63,14 @@ This project uses **Maven** for build automation and dependency management.
 git clone https://github.com/10xDeVv/Weatherly.git
 
 # Build the project
-mvn clean install
+./mvnw clean install (MacOS/Linux)
+         OR
+mvnw.cmd clean install (Windows)
 
 # Run the JavaFX app
-mvn javafx:run
+./mvnw javafx:run (MacOS/Linux)
+        OR
+mvnw.cmd run (Windows)
 
 📂 Folder Structure
 
@@ -122,4 +126,4 @@ Sign up at [WeatherAPI on RapidAPI](https://rapidapi.com/weatherapi/api/weathera
 `export API_KEY=your_rapidapi_key_here`
 
 Then run the app as usual with:  
-`mvn javafx:run`
+`./mvnw or mvnw.cmd javafx:run`
